@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apPayment" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Payment">
+   <children>
+      <Text layoutX="72.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="184.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complete Your Purchase">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="53.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment method">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcbcbc" height="146.0" layoutX="49.0" layoutY="252.0" stroke="TRANSPARENT" strokeType="INSIDE" width="334.0" />
+      <Text layoutX="65.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone" wrappingWidth="80.05770981298963">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnPayNowPayment" layoutX="237.0" layoutY="426.0" mnemonicParsing="false" onAction="#btnPayNowPayment" prefHeight="31.0" prefWidth="146.0" style="-fx-background-color: black;" text="PAY NOW " textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfPhonePayment" layoutX="65.0" layoutY="311.0" onAction="#tfPhonePayment" opacity="0.85" prefHeight="42.0" prefWidth="229.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="31.0" fitWidth="96.0" layoutX="45.0" layoutY="203.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-73.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="133.0" layoutX="171.0" layoutY="193.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-74.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBack" layoutX="4.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnBack" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="42.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-77.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AfterOrder">
+   <children>
+      <Text layoutX="184.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We’ve got your order!">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="201.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is the order you made on 22-Februari-2022">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Text layoutX="41.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ITEM">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="189.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Line endX="383.279052734375" endY="1.52587890625E-5" layoutX="142.0" layoutY="174.0" startX="-100.0" />
+      <Line endX="386.5" layoutX="141.0" layoutY="368.0" startX="-100.0" />
+      <Text layoutX="39.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="39.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Address           " wrappingWidth="178.41752116521093">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="327.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.6725616455078">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfAddressAfterOrder" layoutX="196.0" layoutY="451.0" onAction="#tfAddressAfterOrder" prefHeight="50.0" prefWidth="299.0" />
+      <TextField fx:id="tfItemAfterOrder" layoutX="40.0" layoutY="305.0" onAction="#tfItemAfterOrder" prefHeight="41.0" prefWidth="111.0" />
+      <TextField fx:id="tfTotalAfterOrder" layoutX="196.0" layoutY="396.0" onAction="#tfTotalAfterOrder" prefHeight="33.0" prefWidth="114.0" />
+      <Text layoutX="40.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice Summary">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="15.0" />
+         </font>
+      </Text>
+      <Line endX="383.5" layoutX="141.0" layoutY="227.0" startX="-100.0" />
+      <TextField fx:id="tfQtyAfterOrder" layoutX="190.0" layoutY="303.0" onAction="#tfQtyAfterOrder" prefHeight="41.0" prefWidth="79.0" />
+      <Line endX="386.5" layoutX="140.0" layoutY="526.0" startX="-100.0" />
+      <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="271.0" layoutY="32.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-75.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="12.0" fitWidth="97.0" layoutX="259.0" layoutY="613.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-76.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

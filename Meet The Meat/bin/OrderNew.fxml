@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apOrderNew" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OrderNew">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3c3c3" height="650.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="591.0" />
+      <Button fx:id="btnBack" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnBack" style="-fx-background-color: transparent;" />
+      <Text layoutX="224.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="30.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tvOrder" layoutX="35.0" layoutY="94.0" onSort="#tvOrder" prefHeight="277.0" prefWidth="514.0">
+        <columns>
+          <TableColumn fx:id="tcItem" onEditStart="#tcItem" prefWidth="161.82949829101562" text="ITEM" />
+          <TableColumn fx:id="tcQTY" onEditStart="#tcQTY" prefWidth="167.89260864257812" text="QTY" />
+          <TableColumn fx:id="tcPrice" onEditStart="#tcPrice" prefWidth="183.00003051757812" text="PRICE" />
+        </columns>
+      </TableView>
+      <Text layoutX="252.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notes">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfNotes" layoutX="123.0" layoutY="442.0" onAction="#tfNotes" opacity="0.72" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: black;" />
+      <Text layoutX="125.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Any more orders?">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Still can add another menu, yes." />
+      <Button fx:id="btnAddMore" layoutX="388.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnAddMore" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: black;" text="ADD" textFill="WHITE" />
+      <Text layoutX="125.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="tfTotal" layoutX="200.0" layoutY="566.0" onAction="#tfTotal" prefHeight="26.0" prefWidth="88.0" />
+      <Button fx:id="btnOrder" layoutX="386.0" layoutY="564.0" mnemonicParsing="false" onAction="#btnOrder" style="-fx-background-color: black;" text="ORDER" textFill="WHITE" />
+      <Button fx:id="btnKuranginBarang" layoutX="32.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnKuranginBarang" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: grey;" text="Kurangin " />
+      <Button fx:id="btnPlusBarang" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnPlusBarang" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: grey;" text="Tambah" />
+      <Button fx:id="btnBack" layoutX="22.0" layoutY="16.0" mnemonicParsing="false" onAction="#btnBack" text="Back" />
+   </children>
+</AnchorPane>

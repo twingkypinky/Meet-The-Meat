@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apMenu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#727679" height="488.0" layoutX="-3.0" layoutY="159.0" stroke="BLACK" strokeType="INSIDE" width="591.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="594.0" layoutX="34.0" layoutY="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="527.0" />
+      <Text layoutX="258.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Text>
+      <Line endX="376.49932861328125" layoutX="162.0" layoutY="166.0" startX="-100.0" />
+      <Line endX="-36.993919372558594" layoutX="156.0" layoutY="165.0" startX="-93.5" startY="0.5" stroke="#f81919" strokeWidth="3.0" />
+      <Button fx:id="btnBurgerMenu" layoutX="37.0" layoutY="119.0" mnemonicParsing="false" onAction="#btnBurger" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: transparent;" text="Burger" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button layoutX="128.0" layoutY="120.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: transparenttransparent;" text="Drink" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button layoutX="201.0" layoutY="119.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: transparenttransparent;" text="Dessert" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Button layoutX="287.0" layoutY="120.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="133.0" style="-fx-background-color: transparenttransparent;" text="French Fries" textAlignment="CENTER">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <Text layoutX="242.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="51.213716592114054">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="182.0" fitWidth="124.0" layoutX="63.0" layoutY="160.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-12.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="135.0" layoutX="58.0" layoutY="402.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-13.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="155.0" fitWidth="124.0" layoutX="232.0" layoutY="373.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-15.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="124.0" fitWidth="124.0" layoutX="393.0" layoutY="399.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-16.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="130.0" fitWidth="125.0" layoutX="378.0" layoutY="192.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-19.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="139.0" fitWidth="113.0" layoutX="229.0" layoutY="191.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-18.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAdd1Menu" layoutX="144.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnAdd1" prefHeight="29.0" prefWidth="32.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAdd2Menu" layoutX="301.0" layoutY="343.0" mnemonicParsing="false" onAction="#btnAdd2" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparenttransparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAdd3Menu" layoutX="469.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnAdd3" prefHeight="29.0" prefWidth="32.0" style="-fx-background-color: transparenttransparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAdd4Menu" layoutX="148.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnAdd4" style="-fx-background-color: transparenttransparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAdd5Menu" layoutX="300.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnAdd5" style="-fx-background-color: transparenttransparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAdd6Menu" layoutX="468.0" layoutY="552.0" mnemonicParsing="false" onAction="#btnAdd6" style="-fx-background-color: transparenttransparent;">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-29.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnBackMenu" layoutX="41.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnBackMenu" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="49.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-49.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="tfJumlahAddMenu" layoutX="487.0" layoutY="30.0" onAction="#tfJumlahAddMenu" prefHeight="26.0" prefWidth="33.0" style="-fx-background-color: trans;" />
+      <Button fx:id="btnKeranjang" layoutX="503.0" layoutY="35.0" mnemonicParsing="false" onAction="#btnKeranjang" prefHeight="40.0" prefWidth="46.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="32.0" fitWidth="29.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextField fx:id="tfBurger1" alignment="TOP_LEFT" layoutX="76.0" layoutY="322.0" onAction="#tfBurger1" prefHeight="29.0" prefWidth="125.0" style="-fx-background-color: trans;" text="Chicken Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga1" layoutX="75.0" layoutY="345.0" onAction="#harga1" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfBurger2" alignment="TOP_LEFT" layoutX="233.0" layoutY="322.0" onAction="#tfBurger2" prefHeight="29.0" prefWidth="124.0" style="-fx-background-color: trans;" text="Cheese Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga2" layoutX="232.0" layoutY="345.0" onAction="#harga2" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfBurger3" alignment="TOP_LEFT" layoutX="400.0" layoutY="322.0" onAction="#tfBurger3" prefHeight="29.0" prefWidth="154.0" style="-fx-background-color: trans;" text="Double Cheese Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga3" layoutX="399.0" layoutY="345.0" onAction="#harga3" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga4" layoutX="76.0" layoutY="555.0" onAction="#harga4" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfBurger4" alignment="TOP_LEFT" layoutX="76.0" layoutY="533.0" onAction="#tfBurger4" prefHeight="29.0" prefWidth="83.0" style="-fx-background-color: trans;" text="Beef Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga5" layoutX="233.0" layoutY="555.0" onAction="#harga5" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfBurger5" alignment="TOP_LEFT" layoutX="233.0" layoutY="533.0" onAction="#tfBurger5" prefHeight="29.0" prefWidth="113.0" style="-fx-background-color: trans;" text="Mozarella Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tfBurger6" alignment="TOP_LEFT" layoutX="399.0" layoutY="532.0" onAction="#tfBurger6" prefHeight="29.0" prefWidth="135.0" style="-fx-background-color: trans;" text="Crispy Chicken Burger">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="11.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="harga6" layoutX="399.0" layoutY="555.0" onAction="#harga6" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: trans;" text="12.000">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

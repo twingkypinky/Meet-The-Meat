@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apContactUs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ContactUs">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8cacd" height="652.0" layoutX="-1.0" layoutY="-5.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="451.0" layoutX="180.0" layoutY="48.0" opacity="0.95" stroke="WHITE" strokeType="INSIDE" width="388.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="214.0" layoutX="20.0" layoutY="75.0" opacity="0.84" stroke="#7c7575" strokeType="INSIDE" width="266.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="82.0" layoutY="256.0" text="Call Center : 1500630" />
+      <Label layoutX="35.0" layoutY="88.0" prefHeight="28.0" prefWidth="118.0" text="Contact Us">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="91.0" text="Kirim Pesan">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="281.0" text="Subjek">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="304.0" layoutY="347.0" text="Pesan">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="304.0" layoutY="211.0" text="Email">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="304.0" layoutY="137.0" text="Nama Lengkap">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="btnContactSubmit" layoutX="490.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnContactSubmit" opacity="0.85" style="-fx-background-color: black;" text="SUBMIT" textFill="WHITE" />
+      <Label layoutX="81.0" layoutY="220.0" text="Telp : 021-5255733" />
+      <Label layoutX="82.0" layoutY="144.0" text="Kota Tangerang Banten" />
+      <Label layoutX="82.0" layoutY="181.0" text="Mtm.co.id" />
+      <ImageView fitHeight="19.0" fitWidth="22.0" layoutX="47.0" layoutY="218.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image-removebg-preview-35.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="18.0" fitWidth="32.0" layoutX="42.0" layoutY="181.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image-removebg-preview-33.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="188.0" fitWidth="265.0" layoutX="21.0" layoutY="287.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="24.0" layoutX="46.0" layoutY="142.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image-removebg-preview-45.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="18.0" fitWidth="19.0" layoutX="51.0" layoutY="254.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image-removebg-preview-44.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="ContactNamaLengkap" layoutX="303.0" layoutY="167.0" onAction="#tfContactNama" prefHeight="31.0" prefWidth="246.0" />
+      <TextField fx:id="ContactEmail" layoutX="303.0" layoutY="242.0" onAction="#tfContactEmail" prefHeight="29.0" prefWidth="246.0" />
+      <TextField fx:id="ContactSubjek" layoutX="304.0" layoutY="307.0" onAction="#tfContactSubjek" prefHeight="29.0" prefWidth="246.0" />
+      <TextField fx:id="ContactPesan" layoutX="303.0" layoutY="380.0" onAction="#tfContactPesan" prefHeight="47.0" prefWidth="246.0" />
+      <ImageView fitHeight="10.0" fitWidth="79.0" layoutX="254.0" layoutY="585.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/image-removebg-preview-46.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
