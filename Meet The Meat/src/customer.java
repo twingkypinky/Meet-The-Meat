@@ -5,9 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +24,6 @@ import javafx.stage.Stage;
 
 public class customer implements Initializable{
     Connection conn;
-
     
     @FXML
     private Button btnBack;
@@ -36,7 +32,10 @@ public class customer implements Initializable{
     private Button btnNext;
 
     @FXML
-    private Button btnGetData;
+    private TableView<customer2> tblViewCustomer;
+
+    @FXML
+    private TableColumn<customer2, Integer> colCusID;
 
     @FXML
     private TableColumn<customer2, String> colAddress;
@@ -45,32 +44,24 @@ public class customer implements Initializable{
     private TableColumn<customer2, String> colCity;
 
     @FXML
-    private TableColumn<customer2, Integer> colCusID;
-
-    @FXML
     private TableColumn<customer2, String> colPhone;
 
     @FXML
     private TableColumn<customer2, String> collFName;
 
-    @FXML
-    private TableView<customer2> tblViewCustomer;
-
     ObservableList<customer2> data = FXCollections.observableArrayList();
-        //new customer2(customerID, fullname, address, city, phone)
-    
 
     @Override    
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colCusID.setCellValueFactory(new PropertyValueFactory<>("customerID"));
-        collFName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
-        colCity.setCellValueFactory(new PropertyValueFactory<>("city"));
-        colPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        colCusID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
+        collFName.setCellValueFactory(new PropertyValueFactory<>("FullName"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        colCity.setCellValueFactory(new PropertyValueFactory<>("City"));
+        colPhone.setCellValueFactory(new PropertyValueFactory<>("Phone"));
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT * FROM Customer";
             Statement st = conn.createStatement();
@@ -88,72 +79,7 @@ public class customer implements Initializable{
             error.showAndWait();
         }
     }
-    //ObservableList<customer2> obList = FXCollections.observableArrayList();
 
-    /*@Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
-
-            String sql = "SELECT * FROM Customer";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-                obList.add(new customer2(rs.getString("CustomerID"), rs.getString("FullName"), rs.getString("Address"), rs.getString("City"), rs.getString("Phone")));
-            }
-        } catch (Exception e) {
-            Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("Error Dialog");
-            error.setHeaderText("An Error Has Occurred");
-            error.setContentText("Please input integer only!");
-            error.showAndWait();
-        }
-
-        colCusID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("FullName"));
-        colCity.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        colPhone.setCellValueFactory(new PropertyValueFactory<>("City"));
-        collFName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-
-        table.setItems(obList);
-    }*/
-
-    @FXML
-    void btnGetDataPushed(ActionEvent event) throws IOException {
-        /*try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
-
-            String sql = "SELECT * FROM Customer";
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-
-            while (rs.next()) {
-                //obList.add(new customer2(rs.getString("CustomerID"), rs.getString("FullName"), rs.getString("Address"), rs.getString("City"), rs.getString("Phone")));
-                String customerID = rs.getString("CustomerID");
-                String fullName = rs.getString("FullName");
-                String address = rs.getString("Address");
-                String city = rs.getString("City");
-                String phone = rs.getString("Phone");
-
-                colCusID.setCellValueFactory(new PropertyValueFactory<>("CustomerID"));
-        colAddress.setCellValueFactory(new PropertyValueFactory<>("FullName"));
-        colCity.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        colPhone.setCellValueFactory(new PropertyValueFactory<>("City"));
-        collFName.setCellValueFactory(new PropertyValueFactory<>("Phone"));
-            }
-        } catch (Exception e) {
-            Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("Error Dialog");
-            error.setHeaderText("An Error Has Occurred");
-            error.setContentText("Please input integer only!");
-            error.showAndWait();
-        }*/
-    }
-
-    //public void initialize
     @FXML
     void btnBackPushed(ActionEvent event) throws IOException {
         Parent pToInventory = FXMLLoader.load(getClass().getResource("Inventory GUI.fxml"));

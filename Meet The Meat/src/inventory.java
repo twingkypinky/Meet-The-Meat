@@ -1,27 +1,44 @@
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.text.Text;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-
-public class inventory {
+public class inventory implements Initializable {
     Connection conn;
     PreparedStatement pst;
+
+    @FXML
+    private TableView<inventory2> tblviewInventory;
+
+    @FXML
+    private TableColumn<inventory2, String> colFoodName;
+
+    @FXML
+    private TableColumn<inventory2, Integer> colPrice;
+
+    @FXML
+    private TableColumn<inventory2, Integer> colStock;
 
     @FXML
     private Button btnAddToBurger1;
@@ -46,30 +63,6 @@ public class inventory {
 
     @FXML
     private Button btnNext;
-        
-    @FXML
-    private Text stockBurger1;
-        //static int burger1 = 0;
-
-    @FXML
-    private Text stockBurger2;
-        //static int burger2 = 0;
-
-    @FXML
-    private Text stockBurger3;
-        //static int burger3 = 0;
-
-    @FXML
-    private Text stockBurger4;
-        //static int burger4 = 0;
-
-    @FXML
-    private Text stockBurger5;
-        //static int burger5 = 0;
-    
-    @FXML
-    private Text stockBurger6;
-        //static int burger6 = 0;
 
     @FXML
     private TextField txtfieldBurger1;
@@ -89,13 +82,69 @@ public class inventory {
     @FXML
     private TextField txtfieldBurger6;
 
+    ObservableList<inventory2> data = FXCollections.observableArrayList();
+
+    @Override    
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        colFoodName.setCellValueFactory(new PropertyValueFactory<>("FoodName"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        colStock.setCellValueFactory(new PropertyValueFactory<>("Stock"));
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT * FROM Inventory";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                data.add(new inventory2(rs.getString("FoodName"), rs.getInt("Price"), rs.getInt("Stock")));
+            }
+            tblviewInventory.setItems(data);
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Failed to retrieve data!");
+            error.showAndWait();
+        }
+    }
+
+    public void updateTable() {
+        tblviewInventory.getItems().clear();
+        colFoodName.setCellValueFactory(new PropertyValueFactory<>("FoodName"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("Price"));
+        colStock.setCellValueFactory(new PropertyValueFactory<>("Stock"));
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT * FROM Inventory";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                data.add(new inventory2(rs.getString("FoodName"), rs.getInt("Price"), rs.getInt("Stock")));
+            }
+            tblviewInventory.setItems(data);
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Failed to retrieve data!");
+            error.showAndWait();
+        }
+    }
+
     @FXML
     void btnAddToBurger1Pushed(ActionEvent event) {
         try {
             int frmTxtfieldBurger1 = Integer.parseInt(txtfieldBurger1.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger1'";
             Statement st = conn.createStatement();
@@ -115,10 +164,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger1");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger1.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -129,6 +175,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -140,6 +187,7 @@ public class inventory {
             }
             error.showAndWait();
         }
+        tblviewInventory.refresh();
         txtfieldBurger1.clear();
     }
 
@@ -149,7 +197,7 @@ public class inventory {
             int frmTxtfieldBurger2 = Integer.parseInt(txtfieldBurger2.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger2'";
             Statement st = conn.createStatement();
@@ -169,10 +217,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger2");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger2.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -183,6 +228,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -203,7 +249,7 @@ public class inventory {
             int frmTxtfieldBurger3 = Integer.parseInt(txtfieldBurger3.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger3'";
             Statement st = conn.createStatement();
@@ -223,10 +269,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger3");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger3.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -237,6 +280,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -257,7 +301,7 @@ public class inventory {
             int frmTxtfieldBurger4 = Integer.parseInt(txtfieldBurger4.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger4'";
             Statement st = conn.createStatement();
@@ -277,10 +321,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger4");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger4.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -291,6 +332,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -311,7 +353,7 @@ public class inventory {
             int frmTxtfieldBurger5 = Integer.parseInt(txtfieldBurger5.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger5'";
             Statement st = conn.createStatement();
@@ -331,10 +373,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger5");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger5.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -345,6 +384,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -365,7 +405,7 @@ public class inventory {
             int frmTxtfieldBurger6 = Integer.parseInt(txtfieldBurger6.getText());
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "Bh6666kv");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger6'";
             Statement st = conn.createStatement();
@@ -385,10 +425,7 @@ public class inventory {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
                         pst.setString(2, "Burger6");
-                        int updateInventory = pst.executeUpdate();
-
-                        stockBurger6.setText("" + total);
-                        System.out.println(total);
+                        pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
                         error.setTitle("Error Dialog");
@@ -399,6 +436,7 @@ public class inventory {
                 }
             }
             //st.close();
+            updateTable();
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
@@ -420,7 +458,6 @@ public class inventory {
         Scene scToAdmin = new Scene(pToAdmin);
         stToAdmin.setScene(scToAdmin);
         stToAdmin.show();
-        //inventory.getScene().getWindow().hide();
     }
 
     @FXML

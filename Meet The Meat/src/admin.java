@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,15 +12,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class admin {
-
 
     @FXML
     private Button btnBack;
@@ -46,60 +40,49 @@ public class admin {
     
     @FXML
     void btnLoginPushed(ActionEvent event) throws IOException {
+        try{
+            String host = "jdbc:mysql://localhost:3306/burgerapp";
+            String username = "root";
+            String password = "240122";
+            Connection conn = DriverManager.getConnection(host, username, password);
+            Statement st = conn.createStatement();
 
-        /*try {
-            if (userIn.equals(username) && passIn.equals(password)) {
+            String nameIn = txtfieldUsername.getText();
+            String passwordIn = txtfieldPassword.getText();
+
+            String sql = "SELECT * FROM burgerapp.Admin where Name = '" + nameIn + "'and Password = '"+ passwordIn +"'";
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
                 Parent pToInventory = FXMLLoader.load(getClass().getResource("Inventory GUI.fxml"));
                 Stage stToInventory = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scToInventory = new Scene(pToInventory);
                 stToInventory.setScene(scToInventory);
                 stToInventory.show();
             } else {
-                error.showAndWait();
-            } 
-        }catch (Exception e) {
-            error.showAndWait();
-        }*/
-        try{
-            String host = "jdbc:mysql://localhost:3306/burgerapp";
-            String uName = "root";
-            String pw = "password";
-            Connection con = DriverManager.getConnection(host, uName, pw);
-            Statement st = con.createStatement();
-            String name = txtfieldUsername.getText();
-            String pass = txtfieldPassword.getText();
-            String sql = "Select * from burgerapp.Admin where Name = '" + name + "'and Password = '"+ pass +"'";
-            ResultSet rs = st.executeQuery(sql);
-            if(rs.next())
-            {
-                Stage stage = (Stage) btnLogin.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("Inventory GUI.fxml"));
-                stage.setTitle("After Login");
-                stage.setScene(new Scene(root));
-            }else
-            {
+                if (txtfieldUsername.getText().isBlank() || txtfieldPassword.getText().isBlank()) {
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("Error Dialog");
+                    error.setHeaderText("An Error Has Occurred");
+                    error.setContentText("A field is empty!");
+                    error.showAndWait();
+                } else {
                 Alert error = new Alert(AlertType.ERROR);
                 error.setTitle("Error Dialog");
                 error.setHeaderText("An Error Has Occurred");
-                error.setContentText("Please input the name, password, and confrim password!");
+                error.setContentText("Incorrect name or password!");
                 error.showAndWait();
+                }
             }
-        }   catch(Exception e)
-            
-            {
-            e.getStackTrace();
-            e.getMessage();
-            }
-        
-
+        } catch(Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Unable to log in!");
+            error.showAndWait();
+        }
     }
-        //inventory.x = 10;
-        //System.out.println(inventory.burger4);
-        //System.out.println(inventory.txtfieldBurger4.getText());
-        //inventory.x = txtfieldUsername.getText();
-        //inventory.stockBurger4.setText("arg0");
     
-
     @FXML
     void btnRegisNewAdminPushed(ActionEvent event) throws IOException {
         Parent pToAdmin = FXMLLoader.load(getClass().getResource("Register GUI.fxml"));
