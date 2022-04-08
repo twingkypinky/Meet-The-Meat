@@ -41,15 +41,13 @@ public class Address {
     void btnBackAddress(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("Order.fxml"));
         apAddress.getChildren().setAll(pane);
-        
-
     }
 
     @FXML
     void btnContinue(ActionEvent event) throws IOException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
         
             if (tfFullName.getText().isBlank() || tfAddress.getText().isBlank() || tfCity.getText().isBlank() || tfPhone.getText().isBlank()) {
                 Alert error = new Alert(AlertType.ERROR);
@@ -63,7 +61,7 @@ public class Address {
                 pst.setString(2, tfAddress.getText());
                 pst.setString(3, tfCity.getText());
                 pst.setString(4, tfPhone.getText());
-                int updateInventory = pst.executeUpdate();
+                pst.executeUpdate();
 
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("Payment.fxml"));
                 apAddress.getChildren().setAll(pane);
