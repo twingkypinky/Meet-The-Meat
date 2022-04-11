@@ -1,17 +1,26 @@
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.converter.NumberStringConverter;
 
 public class Menu implements Initializable {
+    Connection conn;
+    PreparedStatement pst;
 
     @FXML
     private AnchorPane apMenu;
@@ -86,51 +95,215 @@ public class Menu implements Initializable {
     void btnAdd1(ActionEvent event) {
         // ambil menu pertama
         Node node = Data.get(1);
-        // tambah jumlah pesanan
-        node.setQty(node.getQty() + 1);
-        // update data
-        Data.updateOrderData();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Chicken Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
 
     @FXML
     void btnAdd2(ActionEvent event) {
+        //Node node = Data.get(2);
+        //node.setQty(node.getQty() + 1);
+        //Data.updateOrderData();
         Node node = Data.get(2);
-        node.setQty(node.getQty() + 1);
-        Data.updateOrderData();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Cheese Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
     @FXML
     void btnAdd3(ActionEvent event) {
+        //Node node = Data.get(3);
+        //node.setQty(node.getQty() + 1);
+        //Data.updateOrderData();
         Node node = Data.get(3);
-        node.setQty(node.getQty() + 1);
-        Data.updateOrderData();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Double Cheese Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
     @FXML
     void btnAdd4(ActionEvent event) {
+        //Node node = Data.get(4);
+        //node.setQty(node.getQty() + 1);
+        //Data.updateOrderData();
         Node node = Data.get(4);
-        node.setQty(node.getQty() + 1);
-        Data.updateOrderData();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Beef Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
     @FXML
     void btnAdd5(ActionEvent event) {
+        //Node node = Data.get(5);
+        //node.setQty(node.getQty() + 1);
+        //Data.updateOrderData();
         Node node = Data.get(5);
-        node.setQty(node.getQty() + 1);
-        Data.updateOrderData();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Mozarella Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
     @FXML
     void btnAdd6(ActionEvent event) {
+        //Node node = Data.get(6);
+        //node.setQty(node.getQty() + 1);
+        //Data.updateOrderData();
         Node node = Data.get(6);
-        node.setQty(node.getQty() + 1);
-        Data.updateOrderData();
 
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Crispy Chicken Burger'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            while (rs.next()) {
+                int stck = rs.getInt("Stock");
+
+                if (node.getQty() < stck) {
+                    // tambah jumlah pesanan
+                    node.setQty(node.getQty() + 1);
+                    // update data
+                    Data.updateOrderData();
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
+            error.showAndWait();
+        }
     }
 
     @FXML

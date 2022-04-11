@@ -46,6 +46,10 @@ public class AfterOrder {
                 stringAddress.setText(rs.getString("Address"));
                 stringCity.setText(rs.getString("City"));
                 stringPhone.setText(rs.getString("Phone"));
+                tfTotalAfterOrder.setText("" + Data.getTotalPriceProperty().intValue());
+                tfQtyAfterOrder.setText("" + Data.getTotal());
+                //Tinggal yng untuk tfItemAfterOrder 
+                 
             }
             //rs.close();
         } catch (Exception e) {
