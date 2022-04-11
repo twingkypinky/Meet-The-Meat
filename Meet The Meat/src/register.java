@@ -42,25 +42,27 @@ public class register {
                 error.setHeaderText("An Error Has Occurred");
                 error.setContentText("Please input the name, password, and confrim password!");
                 error.showAndWait();
+            } else {
+                if (txtfieldRegisPassword.getText().equals(txtfieldRegisPasswordConfirm.getText())) {
+                    pst.executeUpdate();
+                    Alert error = new Alert(AlertType.INFORMATION);
+                    error.setTitle("Information Dialog");
+                    error.setHeaderText(null);
+                    error.setContentText("Registered new admin successfully");
+                    error.showAndWait();
+                    txtfieldRegisName.clear();
+                    txtfieldRegisPassword.clear();
+                    txtfieldRegisPasswordConfirm.clear();
+                } else {
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("Error Dialog");
+                    error.setHeaderText("An Error Has Occurred");
+                    error.setContentText("Password and Confirm Password does not match!");
+                    error.showAndWait();
+                }
             }
 
-            if (txtfieldRegisPassword.getText().equals(txtfieldRegisPasswordConfirm.getText())) {
-                pst.executeUpdate();
-                Alert error = new Alert(AlertType.INFORMATION);
-                error.setTitle("Information Dialog");
-                error.setHeaderText(null);
-                error.setContentText("Registered new admin successfully");
-                error.showAndWait();
-                txtfieldRegisName.clear();
-                txtfieldRegisPassword.clear();
-                txtfieldRegisPasswordConfirm.clear();
-            } else {
-                Alert error = new Alert(AlertType.ERROR);
-                error.setTitle("Error Dialog");
-                error.setHeaderText("An Error Has Occurred");
-                error.setContentText("Password and Confirm Password does not match!");
-                error.showAndWait();
-            }
+            
         }catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
             error.setTitle("Error Dialog");
