@@ -4,6 +4,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -13,7 +15,7 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3c3c3" height="650.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="591.0" />
       <Button fx:id="btnBack" layoutX="4.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnBack" style="-fx-background-color: transparent;" />
-      <Text layoutX="224.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order">
+      <Text layoutX="224.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order">
          <font>
             <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
@@ -30,23 +32,44 @@
             <Font size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="tfNotes" layoutX="123.0" layoutY="442.0" onAction="#tfNotes" opacity="0.72" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: black;" />
+      <TextField fx:id="tfNotes" layoutX="123.0" layoutY="442.0" onAction="#tfNotes" opacity="0.72" prefHeight="42.0" prefWidth="323.0" style="-fx-background-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
       <Text layoutX="125.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Any more orders?">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
       <Text layoutX="126.0" layoutY="536.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Still can add another menu, yes." />
-      <Button fx:id="btnAddMore" layoutX="388.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnAddMore" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: black;" text="ADD" textFill="WHITE" />
+      <Button fx:id="btnAddMore" layoutX="357.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnAddMore" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="ADD" textFill="WHITE" />
       <Text layoutX="125.0" layoutY="585.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
          <font>
             <Font name="Arial Rounded MT Bold" size="19.0" />
          </font>
       </Text>
-      <TextField fx:id="tfTotal" layoutX="200.0" layoutY="566.0" onAction="#tfTotal" prefHeight="26.0" prefWidth="88.0" />
-      <Button fx:id="btnOrder" layoutX="386.0" layoutY="564.0" mnemonicParsing="false" onAction="#btnOrder" style="-fx-background-color: black;" text="ORDER" textFill="WHITE" />
-      <Button fx:id="btnKuranginBarang" layoutX="32.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnKuranginBarang" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: grey;" text="Kurangin " />
-      <Button fx:id="btnPlusBarang" layoutX="113.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnPlusBarang" prefHeight="26.0" prefWidth="71.0" style="-fx-background-color: grey;" text="Tambah" />
-      <Button fx:id="btnBack" layoutX="22.0" layoutY="16.0" mnemonicParsing="false" onAction="#btnBack" text="Back" />
+      <TextField fx:id="tfTotal" layoutX="200.0" layoutY="566.0" onAction="#tfTotal" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: trans;" />
+      <Button fx:id="btnOrder" layoutX="358.0" layoutY="566.0" mnemonicParsing="false" onAction="#btnOrder" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="ORDER" textFill="WHITE" />
+      <Button fx:id="btnKuranginBarang" layoutX="32.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnKuranginBarang" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-89.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnPlusBarang" layoutX="71.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnPlusBarang" prefHeight="42.0" prefWidth="45.0" style="-fx-background-color: transtrans;">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="33.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="btnBack" layoutX="13.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="42.0" prefWidth="56.0" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="52.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-79.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </AnchorPane>

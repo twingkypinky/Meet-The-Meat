@@ -15,54 +15,106 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory">
    <children>
-      <TabPane layoutX="-1.0" layoutY="53.0" prefHeight="580.0" prefWidth="586.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-1.0" layoutY="45.0" prefHeight="588.0" prefWidth="586.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Burgers">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="359.0" prefWidth="586.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="646.0" prefWidth="586.0">
                      <children>
-                        <Button fx:id="btnAddToBurger1" layoutX="502.0" layoutY="59.0" mnemonicParsing="false" onAction="#btnAddToBurger1Pushed" text="Add" />
-                        <Button fx:id="btnAddToBurger2" layoutX="502.0" layoutY="94.0" mnemonicParsing="false" onAction="#btnAddToBurger2Pushed" text="Add" />
-                        <Button fx:id="btnAddToBurger4" layoutX="502.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnAddToBurger4Pushed" text="Add" />
-                        <Button fx:id="btnAddToBurger5" layoutX="502.0" layoutY="199.0" mnemonicParsing="false" onAction="#btnAddToBurger5Pushed" text="Add" />
-                        <Button fx:id="btnAddToBurger3" layoutX="502.0" layoutY="129.0" mnemonicParsing="false" onAction="#btnAddToBurger3Pushed" text="Add" />
-                        <TextField fx:id="txtfieldBurger1" layoutX="438.0" layoutY="59.0" prefHeight="25.0" prefWidth="54.0" />
-                        <TextField fx:id="txtfieldBurger2" layoutX="438.0" layoutY="94.0" prefHeight="25.0" prefWidth="54.0" />
-                        <TextField fx:id="txtfieldBurger3" layoutX="438.0" layoutY="129.0" prefHeight="25.0" prefWidth="54.0" />
-                        <TextField fx:id="txtfieldBurger4" layoutX="438.0" layoutY="164.0" prefHeight="25.0" prefWidth="54.0" />
-                        <TextField fx:id="txtfieldBurger5" layoutX="438.0" layoutY="199.0" prefHeight="25.0" prefWidth="54.0" />
-                        <TextField fx:id="txtfieldBurger6" layoutX="438.0" layoutY="234.0" prefHeight="25.0" prefWidth="54.0" />
-                        <Button fx:id="btnAddToBurger6" layoutX="502.0" layoutY="234.0" mnemonicParsing="false" onAction="#btnAddToBurger6Pushed" text="Add" />
-                        <TableView fx:id="tblviewInventory" layoutX="56.0" layoutY="36.0" prefHeight="223.0" prefWidth="338.0">
+                        <Button fx:id="btnAddToBurger1" layoutX="505.0" layoutY="84.0" mnemonicParsing="false" onAction="#btnAddToBurger1Pushed" style="-fx-background-color: transtrans;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnAddToBurger2" layoutX="505.0" layoutY="122.0" mnemonicParsing="false" onAction="#btnAddToBurger2Pushed" style="-fx-background-color: trans;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnAddToBurger4" layoutX="505.0" layoutY="201.0" mnemonicParsing="false" onAction="#btnAddToBurger4Pushed" style="-fx-background-color: transtrans;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnAddToBurger5" layoutX="505.0" layoutY="242.0" mnemonicParsing="false" onAction="#btnAddToBurger5Pushed" style="-fx-background-color: trans;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnAddToBurger3" layoutX="505.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnAddToBurger3Pushed" style="-fx-background-color: transtrans;">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <TextField fx:id="txtfieldBurger1" layoutX="414.0" layoutY="88.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+                        <TextField fx:id="txtfieldBurger2" layoutX="414.0" layoutY="127.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-border-radius: 15; -fx-background-radius: 15;" />
+                        <TextField fx:id="txtfieldBurger3" layoutX="414.0" layoutY="167.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+                        <TextField fx:id="txtfieldBurger4" layoutX="414.0" layoutY="206.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+                        <TextField fx:id="txtfieldBurger5" layoutX="414.0" layoutY="246.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+                        <TextField fx:id="txtfieldBurger6" layoutX="414.0" layoutY="286.0" prefHeight="26.0" prefWidth="86.0" style="-fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" />
+                        <Button fx:id="btnAddToBurger6" layoutX="505.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnAddToBurger6Pushed" prefHeight="28.0" prefWidth="38.0" style="-fx-background-color: transtrans;">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="26.0">
+                                 <image>
+                                    <Image url="@../../../../Downloads/image-removebg-preview-88.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <TableView fx:id="tblviewInventory" layoutX="16.0" layoutY="20.0" prefHeight="343.0" prefWidth="388.0">
                           <columns>
-                            <TableColumn fx:id="colFoodName" prefWidth="112.0" sortable="false" text="FoodName" />
-                            <TableColumn fx:id="colPrice" prefWidth="112.0" sortable="false" text="Price" />
-                              <TableColumn fx:id="colStock" prefWidth="112.0" sortable="false" text="Stock" />
+                            <TableColumn fx:id="colFoodName" prefWidth="178.20236492156982" sortable="false" text="FoodName" />
+                            <TableColumn fx:id="colPrice" prefWidth="104.79765319824219" sortable="false" text="Price" />
+                              <TableColumn fx:id="colStock" prefWidth="110.30352783203125" sortable="false" text="Stock" />
                           </columns>
                         </TableView>
+                        <ImageView fitHeight="13.0" fitWidth="90.0" layoutX="243.0" layoutY="513.0">
+                           <image>
+                              <Image url="@../../../../Downloads/image-removebg-preview-85.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackPushed" prefHeight="31.0" prefWidth="20.0" style="-fx-background-color: FFFFFF;">
-         <graphic>
-            <ImageView fitHeight="23.0" fitWidth="23.0">
-               <image>
-                  <Image url="@UAS(1)/UAS/resources/Back.jpeg" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackPushed" prefHeight="31.0" prefWidth="20.0" style="-fx-background-color: trans;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Button>
-      <Text layoutX="236.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory">
+      <Text layoutX="248.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="25.0" />
+            <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="btnNext" layoutX="488.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnNextPushed" text="Next" />
+      <Button fx:id="btnNext" layoutX="529.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnNextPushed" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-86.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView fitHeight="31.0" fitWidth="43.0" layoutX="9.0" layoutY="9.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-79.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

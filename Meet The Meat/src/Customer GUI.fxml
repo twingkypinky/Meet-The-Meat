@@ -12,32 +12,44 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer">
    <children>
-      <Button fx:id="btnBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBackPushed" prefHeight="31.0" prefWidth="20.0" style="-fx-background-color: FFFFFF;">
-         <graphic>
-            <ImageView fitHeight="23.0" fitWidth="23.0">
-               <image>
-                  <Image url="@../resources/Back.jpeg" />
-               </image>
-            </ImageView>
-         </graphic>
+      <Button fx:id="btnBack" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onAction="#btnBackPushed" prefHeight="53.0" prefWidth="54.0" style="-fx-background-color: trans;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="51.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-79.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <Text layoutX="236.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer">
+      <Text layoutX="243.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer">
          <font>
-            <Font name="System Bold" size="25.0" />
+            <Font name="Times New Roman Bold" size="26.0" />
          </font>
       </Text>
-      <Button fx:id="btnNext" layoutX="488.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnNextPushed" text="Next" />
-      <TableView fx:id="tblViewCustomer" layoutX="13.0" layoutY="99.0" prefHeight="470.0" prefWidth="561.0">
+      <Button fx:id="btnNext" layoutX="516.0" layoutY="12.0" mnemonicParsing="false" onAction="#btnNextPushed" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="47.0">
+               <image>
+                  <Image url="@../../../../Downloads/image-removebg-preview-86.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TableView fx:id="tblViewCustomer" layoutX="13.0" layoutY="59.0" prefHeight="504.0" prefWidth="561.0">
         <columns>
-          <TableColumn fx:id="colCusID" prefWidth="112.0" sortable="false" text="CustomerID" />
-          <TableColumn fx:id="collFName" prefWidth="112.0" sortable="false" text="FullName" />
+          <TableColumn fx:id="colCusID" prefWidth="90.64588260650635" sortable="false" text="CustomerID" />
+          <TableColumn fx:id="collFName" prefWidth="133.3541488647461" sortable="false" text="FullName" />
             <TableColumn fx:id="colAddress" prefWidth="112.0" sortable="false" text="Address" />
             <TableColumn fx:id="colCity" prefWidth="112.0" sortable="false" text="City" />
             <TableColumn fx:id="colPhone" prefWidth="112.0" sortable="false" text="Phone" />
         </columns>
       </TableView>
+      <ImageView fitHeight="13.0" fitWidth="103.0" layoutX="240.0" layoutY="602.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-85.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

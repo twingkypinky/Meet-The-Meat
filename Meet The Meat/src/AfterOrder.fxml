@@ -11,27 +11,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AfterOrder">
    <children>
-      <ImageView fitHeight="348.0" fitWidth="590.0" layoutX="-3.0" layoutY="-7.0">
-         <image>
-            <Image url="@../../../../../../../Pictures/Photos%20Library.photoslibrary/originals/3/398D5782-2C91-4C94-9CB8-7A8906CFF7D7.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="184.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We’ve got your order!">
+      <Text layoutX="167.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We’ve got your order!">
          <font>
-            <Font name="Arial Rounded MT Bold" size="23.0" />
+            <Font name="Times New Roman" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="201.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is the order you made on 22-Februari-2022">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Text>
-      <Text layoutX="41.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ITEM">
+      <Text layoutX="47.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ITEM">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="210.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
+      <Text layoutX="191.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
@@ -41,45 +31,45 @@
             <Image url="@../../../../../../../Downloads/image-removebg-preview-41.png" />
          </image>
       </ImageView>
-      <Line endX="383.279052734375" endY="1.52587890625E-5" layoutX="142.0" layoutY="174.0" startX="-100.0" />
-      <Line endX="386.5" layoutX="141.0" layoutY="368.0" startX="-100.0" />
-      <Text layoutX="41.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
+      <Line endX="383.279052734375" endY="1.52587890625E-5" layoutX="142.0" layoutY="99.0" startX="-100.0" />
+      <Line endX="386.5" layoutX="138.0" layoutY="292.0" startX="-100.0" />
+      <Text layoutX="38.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="39.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Address           " wrappingWidth="178.41752116521093">
+      <Text layoutX="43.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Address           " wrappingWidth="178.41752116521093">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Text>
-      <Text layoutX="327.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="134.6725616455078">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="13.0" />
-         </font>
-      </Text>
-      <TextField fx:id="tfItemAfterOrder" layoutX="40.0" layoutY="305.0" onAction="#tfItemAfterOrder" prefHeight="41.0" prefWidth="111.0" />
-      <TextField fx:id="tfTotalAfterOrder" layoutX="198.0" layoutY="378.0" onAction="#tfTotalAfterOrder" prefHeight="33.0" prefWidth="114.0" />
-      <Text layoutX="40.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Confirmation ">
+      <TextField fx:id="tfItemAfterOrder" layoutX="45.0" layoutY="225.0" onAction="#tfItemAfterOrder" prefHeight="41.0" prefWidth="111.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
+      <TextField fx:id="tfTotalAfterOrder" layoutX="191.0" layoutY="315.0" onAction="#tfTotalAfterOrder" prefHeight="33.0" prefWidth="114.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
+      <Text layoutX="40.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Confirmation ">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>
       </Text>
-      <Line endX="383.5" layoutX="141.0" layoutY="227.0" startX="-100.0" />
-      <TextField fx:id="tfQtyAfterOrder" layoutX="190.0" layoutY="303.0" onAction="#tfQtyAfterOrder" prefHeight="41.0" prefWidth="79.0" />
+      <Line endX="383.5" layoutX="141.0" layoutY="159.0" startX="-100.0" />
+      <TextField fx:id="tfQtyAfterOrder" layoutX="190.0" layoutY="226.0" onAction="#tfQtyAfterOrder" prefHeight="41.0" prefWidth="79.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
       <ImageView fitHeight="10.0" fitWidth="81.0" layoutX="255.0" layoutY="591.0">
          <image>
             <Image url="@../../../../../../../Downloads/image-removebg-preview-48.png" />
          </image>
       </ImageView>
       <Line endX="386.5" layoutX="139.0" layoutY="601.0" startX="-100.0" />
-      <Label layoutX="51.0" layoutY="452.0" text="Full Name" />
-      <Label layoutX="48.0" layoutY="484.0" text="Address" />
-      <Label layoutX="49.0" layoutY="519.0" text="City" />
-      <Label layoutX="49.0" layoutY="555.0" text="Phone" />
-      <TextField fx:id="stringFullName" layoutX="195.0" layoutY="448.0" />
-      <TextField fx:id="stringAddress" layoutX="195.0" layoutY="480.0" />
-      <TextField fx:id="stringCity" layoutX="195.0" layoutY="515.0" />
-      <TextField fx:id="stringPhone" layoutX="195.0" layoutY="551.0" />
+      <Label layoutX="45.0" layoutY="420.0" text="Full Name" />
+      <Label layoutX="45.0" layoutY="459.0" text="Address" />
+      <Label layoutX="45.0" layoutY="501.0" text="City" />
+      <Label layoutX="45.0" layoutY="543.0" text="Phone" />
+      <TextField fx:id="stringFullName" layoutX="191.0" layoutY="417.0" style="-fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;" />
+      <TextField fx:id="stringAddress" layoutX="191.0" layoutY="455.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
+      <TextField fx:id="stringCity" layoutX="191.0" layoutY="498.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
+      <TextField fx:id="stringPhone" layoutX="191.0" layoutY="540.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />
+      <ImageView fitHeight="10.0" fitWidth="76.0" layoutX="246.0" layoutY="617.0">
+         <image>
+            <Image url="@../../../../Downloads/image-removebg-preview-85.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
