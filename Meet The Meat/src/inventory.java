@@ -146,7 +146,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger1'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Chicken Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -163,7 +163,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger1");
+                        pst.setString(2, "Chicken Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -199,7 +199,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger2'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Cheese Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -216,7 +216,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger2");
+                        pst.setString(2, "Cheese Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -251,7 +251,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger3'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Double Cheese Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -268,7 +268,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger3");
+                        pst.setString(2, "Double Cheese Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -303,7 +303,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger4'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Beef Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -320,7 +320,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger4");
+                        pst.setString(2, "Beef Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -355,7 +355,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger5'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Mozarella Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -372,7 +372,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger5");
+                        pst.setString(2, "Mozarella Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -407,7 +407,7 @@ public class inventory implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
-            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Burger6'";
+            String sql = "SELECT Stock FROM Inventory WHERE FoodName='Crispy Chicken Burger'";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             
@@ -424,7 +424,7 @@ public class inventory implements Initializable {
                     if (total <= 1000) {
                         pst = conn.prepareStatement("UPDATE Inventory SET Stock=? where FoodName=?");
                         pst.setInt(1, total);
-                        pst.setString(2, "Burger6");
+                        pst.setString(2, "Crispy Chicken Burger");
                         pst.executeUpdate();
                     } else {
                         Alert error = new Alert(AlertType.ERROR);
@@ -453,7 +453,7 @@ public class inventory implements Initializable {
 
     @FXML
     void btnBackPushed(ActionEvent event) throws IOException {
-        Parent pToAdmin = FXMLLoader.load(getClass().getResource("Admin GUI.fxml"));
+        Parent pToAdmin = FXMLLoader.load(getClass().getResource("AdminGUI.fxml"));
         Stage stToAdmin = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scToAdmin = new Scene(pToAdmin);
         stToAdmin.setScene(scToAdmin);
