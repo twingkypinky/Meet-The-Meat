@@ -1,4 +1,8 @@
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,16 +66,42 @@ public class Payment {
 
     @FXML
     void btnPayNowPayment(ActionEvent event) throws IOException {
-        try {
-
-        } catch (Exception e) {
-            
-        }
         
         // jika klik button Pay Now maka akan di alihkan ke page after order
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = ConnectToDatabase.AdminConnection();
+            String sql = "SELECT CustomerID FROM Customer ORDER BY CustomerID DESC LIMIT 1";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            
+            int CustID = 0; 
+            PreparedStatement pst;
 
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("AfterOrder.fxml"));
-        apPayment.getChildren().setAll(pane);
+            while (rs.next()) {
+                CustID = rs.getInt("CustomerID");
+            }
+            rs.close();
+
+            for (MenuItem order : Data.getOrderData()) {
+                pst = conn.prepareStatement("INSERT INTO History (CustomerID, Item, Quantity, Price) VALUES (?, ?, ?, ?)");
+                pst.setInt(1, CustID);
+                pst.setString(2, order.getName());
+                pst.setInt(3, order.getQty());
+                pst.setInt(4, order.getPrice());
+                pst.executeUpdate();
+            }
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("AfterOrder.fxml"));
+            apPayment.getChildren().setAll(pane);
+            
+        } catch (Exception e) {
+            Alert error = new Alert(AlertType.ERROR);
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error! Please contact Customer Service!");
+            error.showAndWait();
+        }
+
 
     }
 
