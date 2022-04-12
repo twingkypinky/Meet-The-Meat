@@ -1,9 +1,15 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,6 +21,9 @@ public class register {
 
     @FXML
     private Button btnRegister;
+
+    @FXML
+    private Button btnBackRegis;
 
     @FXML
     private TextField txtfieldRegisName;
@@ -70,6 +79,15 @@ public class register {
             error.setContentText("Failed to register admin!");
             error.showAndWait();
         }
+    }
+
+    @FXML
+    void btnBackRegis(ActionEvent event) throws IOException {
+        Parent pToAdmin = FXMLLoader.load(getClass().getResource("AdminGUI.fxml"));
+        Stage stToAdmin = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scToAdmin = new Scene(pToAdmin);
+        stToAdmin.setScene(scToAdmin);
+        stToAdmin.show();
     }
     
 }

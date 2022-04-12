@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apRegis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#apRegis" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register">
+<AnchorPane fx:id="apRegis" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcbcbc" height="659.0" layoutX="-4.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="590.0" />
       <TextField fx:id="txtfieldRegisName" layoutX="174.0" layoutY="178.0" prefHeight="40.0" prefWidth="234.0" promptText="Username" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" />

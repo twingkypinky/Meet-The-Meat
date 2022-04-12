@@ -62,6 +62,11 @@ public class Payment {
 
     @FXML
     void btnPayNowPayment(ActionEvent event) throws IOException {
+        try {
+
+        } catch (Exception e) {
+            
+        }
         
         // jika klik button Pay Now maka akan di alihkan ke page after order
 
