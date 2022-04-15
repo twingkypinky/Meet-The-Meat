@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -23,8 +24,8 @@ import javafx.util.converter.NumberStringConverter;
 public class OrderNew implements Initializable{
 
     MenuItem selected;
-
     Connection conn;
+    PreparedStatement pst;
 
     @FXML
     private AnchorPane apOrderNew;
@@ -107,7 +108,7 @@ public class OrderNew implements Initializable{
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
 
                 String sql = "SELECT Stock FROM Inventory WHERE FoodName = '" + selected.getName() + "'";
                 Statement st = conn.createStatement();
@@ -117,18 +118,25 @@ public class OrderNew implements Initializable{
                     if (afterAdd <= rs.getInt("Stock")) {
                         node.setQty(node.getQty() + 1);
                         Data.updateOrderData();
+                    } else {
+                        if (afterAdd <= 1000) {
+                            pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
+                            pst.setInt(1, afterAdd);
+                            pst.executeUpdate();
+                        }
                     }
                 }
             } catch (Exception e) {
                 Alert error = new Alert(AlertType.ERROR);
-                error.setTitle("Error Dialog");
-                error.setHeaderText("An Error Has Occurred");
-                error.setContentText("Incorrect name or password!");
+                error.setTitle("STOCK HABIS");
+                error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                error.setContentText("You Can Choose Another Menu!");
                 error.showAndWait();
+            
+            }
             }
         }
-    }
-
+    
     @FXML
     void tcItem(ActionEvent event) {
 
