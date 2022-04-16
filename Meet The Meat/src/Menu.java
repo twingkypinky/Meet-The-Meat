@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -97,7 +98,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Chicken Burger'";
             Statement st = conn.createStatement();
@@ -112,23 +113,22 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
-    
+    }
+
 
     @FXML
     void btnAdd2(ActionEvent event) {
@@ -139,7 +139,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Cheese Burger'";
             Statement st = conn.createStatement();
@@ -154,22 +154,21 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
+    }
 
     @FXML
     void btnAdd3(ActionEvent event) {
@@ -180,7 +179,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Double Cheese Burger'";
             Statement st = conn.createStatement();
@@ -195,22 +194,21 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
+    }
 
     @FXML
     void btnAdd4(ActionEvent event) {
@@ -221,7 +219,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Beef Burger'";
             Statement st = conn.createStatement();
@@ -236,22 +234,22 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
+    }
+
     @FXML
     void btnAdd5(ActionEvent event) {
         //Node node = Data.get(5);
@@ -261,7 +259,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Mozarella Burger'";
             Statement st = conn.createStatement();
@@ -276,22 +274,21 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
+    }
 
     @FXML
     void btnAdd6(ActionEvent event) {
@@ -302,7 +299,7 @@ public class Menu implements Initializable {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "password");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/burgerapp", "root", "240122");
 
             String sql = "SELECT Stock FROM Inventory WHERE FoodName='Crispy Chicken Burger'";
             Statement st = conn.createStatement();
@@ -317,22 +314,21 @@ public class Menu implements Initializable {
                     // update data
                     Data.updateOrderData();
                 } else {
-                    if (stck <= 1000) {
-                        pst = conn.prepareStatement("SELECT Inventory SET Stock=? WHERE >= Stock=?");
-                        pst.setInt(1, stck);
-                        pst.executeUpdate();
-                    }
+                    Alert error = new Alert(AlertType.ERROR);
+                    error.setTitle("STOCK HABIS");
+                    error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
+                    error.setContentText("You Can Choose Another Menu!");
+                    error.showAndWait();
                 }
             }
         } catch (Exception e) {
             Alert error = new Alert(AlertType.ERROR);
-            error.setTitle("STOCK HABIS");
-            error.setHeaderText("Uhm.. Sorry Out Of Stock :) ");
-            error.setContentText("You Can Choose Another Menu!");
+            error.setTitle("Error Dialog");
+            error.setHeaderText("An Error Has Occurred");
+            error.setContentText("Error!");
             error.showAndWait();
-        
         }
-        }
+    }
 
     @FXML
     void btnBackMenu(ActionEvent event) throws IOException {
