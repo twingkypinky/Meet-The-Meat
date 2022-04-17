@@ -52,10 +52,8 @@ public class AfterOrder {
                 stringPhone.setText(rs.getString("Phone"));
                 tfTotalAfterOrder.setText("" + Data.getTotalPriceProperty().intValue());
                 tfQtyAfterOrder.setText("" + Data.getTotal());
+                orders.forEach((orders) -> {tfItemAfterOrder.appendText(orders.getName() + ", ");});
 
-                for (int i = 0; i < 1; i++) {
-                    orders.forEach((orders) -> {tfItemAfterOrder.appendText(orders.getName() + ", ");});
-                }
             }
 
         } catch (Exception e) {
