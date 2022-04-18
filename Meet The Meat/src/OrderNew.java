@@ -167,7 +167,7 @@ public class OrderNew implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // tampilkan data dari observablelist pada tableview
+        
         tcItem.setCellValueFactory(new PropertyValueFactory<MenuItem, String>("name"));
         tcPrice.setCellValueFactory(new PropertyValueFactory<MenuItem, Integer>("price"));
         tcQTY.setCellValueFactory(new PropertyValueFactory<MenuItem, Integer>("qty"));
@@ -176,15 +176,13 @@ public class OrderNew implements Initializable{
         
         tfTotal.textProperty().bindBidirectional(Data.getTotalPriceProperty(), new NumberStringConverter());
 
-        // disable tombol tambah dan kurang di awal
+        
         btnPlusBarang.setDisable(true);
         btnKuranginBarang.setDisable(true);
 
         tvOrder.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                // jika ada item yg dipilih pada tabel, maka simpan pada var selected;
-                selected = (MenuItem) newSelection;
-                // enable tombol
+                selected = (MenuItem) newSelection;                
                 btnPlusBarang.setDisable(false);
                 btnKuranginBarang.setDisable(false);
             } else {
