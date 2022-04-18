@@ -416,7 +416,6 @@ public class Menu implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        // set text dari textfield jenis dan harga burger
         tfBurger1.setText(Data.get(1).getName());
         harga1.setText("" + Data.get(1).getPrice());
         tfBurger2.setText(Data.get(2).getName());
@@ -428,8 +427,7 @@ public class Menu implements Initializable {
         tfBurger5.setText(Data.get(5).getName());
         harga5.setText("" + Data.get(5).getPrice());
         tfBurger6.setText(Data.get(6).getName());
-        harga6.setText("" + Data.get(6).getPrice());
-        // bind properti jumlah pesanan dengan textfield jumlah pesanan sehingga terupdate secara otomatis
+        harga6.setText("" + Data.get(6).getPrice());       
         tfJumlahAddMenu.textProperty().bindBidirectional(Data.getTotalProperty(), new NumberStringConverter());
     }
 
